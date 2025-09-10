@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -68,10 +69,30 @@ public class Main {
 //        System.out.println("Il perimetro del triangolo: " + periTriangolo);
 //        System.out.println("Il perimetro del quadrato: " + periQuadrato);
 
-        Maschio maschio = new Maschio("Memo");
-        Femina femina = new Femina("Mema");
+//        Maschio maschio = new Maschio("Memo");
+//        Femina femina = new Femina("Mema");
+//
+//        maschio.saluta();
+//        femina.saluta();
 
-        maschio.saluta();
-        femina.saluta();
+//        ArrayList<String> nomi = new ArrayList<String>();
+//        nomi.add("Mohamed");
+//        nomi.add("Marco");
+//        nomi.add("Mousa");
+//
+//        for (String s : nomi){
+//            System.out.println("I nomi sono: " + s);
+//        }
+
+        ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+        contatti.add(new Contatto("Mohamed", "1234321"));
+        contatti.add(new Contatto("Mousa", "222333444"));
+        contatti.add(new Contatto("Ibra", "444555666"));
+
+        for (Contatto c : contatti) {
+            System.out.println(c.toString());
+        }
+
+
     }
 }
