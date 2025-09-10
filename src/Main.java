@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -84,15 +85,39 @@ public class Main {
 //            System.out.println("I nomi sono: " + s);
 //        }
 
-        ArrayList<Contatto> contatti = new ArrayList<Contatto>();
-        contatti.add(new Contatto("Mohamed", "1234321"));
-        contatti.add(new Contatto("Mousa", "222333444"));
-        contatti.add(new Contatto("Ibra", "444555666"));
-
-        for (Contatto c : contatti) {
-            System.out.println(c.toString());
+//        ArrayList<Contatto> contatti = new ArrayList<Contatto>();
+//        contatti.add(new Contatto("Mohamed", "1234321"));
+//        contatti.add(new Contatto("Mousa", "222333444"));
+//        contatti.add(new Contatto("Ibra", "444555666"));
+//
+//        for (Contatto c : contatti) {
+//            System.out.println(c.toString());
+//        }
+        boolean exit = true;
+        while (exit) {
+            try {
+                collectNumbers(scanner);
+                exit = false;
+            }catch (Exception e) {
+                System.out.println("Error lanciato:  " + e.getMessage() + ". Try Again!");
+            }
         }
+    }
 
+    private static void collectNumbers(Scanner scanner) {
+        System.out.println("Inserisca il primo numero: ");
+        int numero = scanner.nextInt();
 
+        System.out.println("Inserisca il secondo numero: ");
+        int secondoNumero = scanner.nextInt();
+
+        int result = calcolaLaDivisione(numero, secondoNumero);
+        System.out.println("La divisione vale a " + result);
+    }
+
+    private static int calcolaLaDivisione(int numero1, int numero2) {
+        int result = numero1 / numero2;
+        return result;
     }
 }
+
